@@ -462,23 +462,43 @@ function hmrAcceptRun(bundle, id) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 window.onload = function() {
-    /*Write normal typescript*/ getTrending();
+    createTrending();
 };
-function getTrending() {
+function createTrending() {
     let itemContainer = document.createElement("div");
     itemContainer.className = "item-container";
     fetch("https://api.coingecko.com/api/v3/search/trending").then((response)=>response.json()
     ).then((result)=>{
+        console.log(result);
         result.coins.map((query)=>{
-            let item = document.createElement("ul");
-            let name = document.createElement("li");
+            let item = document.createElement("div");
+            let name = document.createElement("h2");
+            let symbol = document.createElement("h5");
+            let market_cap_rank = document.createElement("p");
+            let thumb = document.createElement("img");
+            let large = document.createElement("img");
+            let price_btc = document.createElement("p");
             item.className = "item";
             name.className = "name";
-            name.innerHTML = query.name;
+            symbol.className = "symbol";
+            market_cap_rank.className = "market_cap_rank";
+            thumb.className = "thumb";
+            large.className = "large";
+            price_btc.className = "price_btc";
+            name.innerHTML = query.item.name;
+            symbol.innerHTML = query.item.symbol;
+            market_cap_rank.innerHTML = query.item.market_cap_rank;
+            thumb.src = query.item.thumb;
+            large.src = query.item.large;
+            price_btc.innerHTML = query.item.price_btc;
             item.appendChild(name);
+            item.appendChild(symbol);
+            item.appendChild(market_cap_rank);
+            item.appendChild(thumb);
+            item.appendChild(large);
+            item.appendChild(price_btc);
             itemContainer.appendChild(item);
             document.body.appendChild(itemContainer);
-            console.log(query);
         });
     });
 } // const trending = async
