@@ -5,14 +5,41 @@
   padding: 0px;
   box-sizing: border-box;
 }
-
 body {
+  background-image: url(Crypto.005d0da7.jpg);
+  background-size: cover;
   font-size: 14pt;
+  font-family: "Kanit", sans-serif;
 }
 body .item-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 30px;
-  border: 5px solid black;
+  margin: 30px;
+}
+body .item-container .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.722);
+}
+body .item-container .item .name {
+  color: black;
+}
+body .item-container .item .symbol {
+  color: black;
+}
+body .item-container .item .market_cap_rank {
+  color: #0496ff;
+}
+body .item-container .item .large {
+  margin: 10px;
+}
+body .item-container .item .price_btc {
+  color: black;
 }
 /*# sourceMappingURL=index.603968dc.css.map */

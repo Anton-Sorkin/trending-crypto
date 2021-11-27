@@ -19,7 +19,7 @@ function createTrending() {
                 let symbol: HTMLHeadingElement = document.createElement("h5");
                 let market_cap_rank: HTMLParagraphElement =
                     document.createElement("p");
-                let thumb: HTMLImageElement = document.createElement("img");
+                // let thumb: HTMLImageElement = document.createElement("img");
                 let large: HTMLImageElement = document.createElement("img");
                 let price_btc: HTMLParagraphElement =
                     document.createElement("p");
@@ -28,21 +28,21 @@ function createTrending() {
                 name.className = "name";
                 symbol.className = "symbol";
                 market_cap_rank.className = "market_cap_rank";
-                thumb.className = "thumb";
+                // thumb.className = "thumb";
                 large.className = "large";
                 price_btc.className = "price_btc";
 
                 name.innerHTML = query.item.name;
                 symbol.innerHTML = query.item.symbol;
                 market_cap_rank.innerHTML = query.item.market_cap_rank;
-                thumb.src = query.item.thumb;
+                // thumb.src = query.item.thumb;
                 large.src = query.item.large;
                 price_btc.innerHTML = query.item.price_btc;
 
                 item.appendChild(name);
                 item.appendChild(symbol);
                 item.appendChild(market_cap_rank);
-                item.appendChild(thumb);
+                // item.appendChild(thumb);
 
                 item.appendChild(large);
                 item.appendChild(price_btc);

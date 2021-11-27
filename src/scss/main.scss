@@ -8,13 +8,39 @@
 }
 
 body {
+    background-image: url(../image/Crypto.jpg);
+    background-size: cover;
     font-size: 14pt;
+    font-family: "Kanit", sans-serif;
     .item-container {
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
         gap: 30px;
-        border: 5px solid black;
+        margin: 30px;
         .item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.722);
+            .name {
+                color: rgb(0, 0, 0);
+            }
+            .symbol {
+                color: rgb(0, 0, 0);
+            }
+            .market_cap_rank {
+                color: rgb(4, 150, 255);
+            }
+            .large {
+                margin: 10px;
+            }
+            .price_btc {
+                color: rgb(0, 0, 0);
+            }
         }
     }
 }
