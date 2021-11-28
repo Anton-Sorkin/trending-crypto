@@ -2,12 +2,96 @@
 /*how to use mixins@include tablet {}*/
 /*how to use extends@extend .class-name;*/
 * {
-	margin: 0px;
-	padding: 0px;
-	box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
 }
 
 body {
-	font-size: 14pt;
-	/*all styling here*/
+    display: grid;
+    background-image: url(../image/Crypto.jpg);
+    background-size: cover;
+    font-size: 14pt;
+    font-family: "Kanit", sans-serif;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "nav_bar container";
+    .nav-container {
+        display: flex;
+        position: fixed;
+        margin: 20px;
+        grid-area: nav_bar;
+        height: 100%;
+        width: 200px;
+        background: rgba(0, 0, 0, 0.348);
+        backdrop-filter: blur(8px);
+        ul {
+            list-style-type: none;
+            li {
+                a {
+                    font-size: 1.3rem;
+                    text-decoration: none;
+                    color: white;
+                }
+                a:hover {
+                    font-size: 1.4rem;
+                    background: rgba(4, 150, 255, 0.334);
+                }
+                .dropdown {
+                    display: inline-block;
+                }
+                .dropdown-content {
+                    display: none;
+                    position: absolute;
+                    min-width: 160px;
+                    box-shadow: 0px 8px 20px 0px rgba(255, 255, 255, 0.076);
+                    z-index: 1;
+                    a {
+                        color: white;
+                        text-decoration: none;
+                        display: block;
+                    }
+                    a:hover {
+                        font-size: 1.4rem;
+                        background: rgba(4, 150, 255, 0.334);
+                    }
+                }
+            }
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+        }
+    }
+    .item-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        margin: 30px;
+        grid-area: container;
+        .item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 15px;
+            background: rgba(0, 0, 0, 0.348);
+            backdrop-filter: blur(8px);
+            box-shadow: 0px 8px 16px 0px rgba(255, 255, 255, 0.225);
+            .name {
+                color: rgb(255, 255, 255);
+            }
+            .symbol {
+                color: rgb(255, 255, 255);
+            }
+            .market_cap_rank {
+                color: rgb(4, 150, 255);
+            }
+            .large {
+                margin: 10px;
+            }
+            .price_btc {
+                color: rgb(255, 255, 255);
+            }
+        }
+    }
 }
