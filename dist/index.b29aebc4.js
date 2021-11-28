@@ -459,57 +459,17 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"iwEF1":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
+// import { Icoins } from "./models/Icoins";
+// import { Iitem } from "./models/Iitem";
 window.onload = function() {
-    /*Write normal typescript*/ getTrending();
+    /*Write normal typescript*/ // getTrending();
+    fetchApi();
 };
-function getTrending() {
-    let itemContainer = document.createElement("div");
-    itemContainer.className = "item-container";
-    fetch("https://api.coingecko.com/api/v3/search/trending").then((response)=>response.json()
-    ).then((result)=>{
-        result.coins.map((query)=>{
-            let item = document.createElement("ul");
-            let name = document.createElement("li");
-            item.className = "item";
-            name.className = "name";
-            name.innerHTML = query.name;
-            item.appendChild(name);
-            itemContainer.appendChild(item);
-            document.body.appendChild(itemContainer);
-            console.log(query);
-        });
-    });
-} // const trending = async
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"ciiiV":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, '__esModule', {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === 'default' || key === '__esModule' || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
+let fetchApi = async ()=>{
+    let response = await fetch("https://api.coingecko.com/api/v3/search/trending");
+    let data = await response.json();
+    data.coins.map((query)=>{
+        console.log(query.item.name);
     });
 };
 
